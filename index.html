@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotiraTask - To Do List Mahasiswa Unindra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>🎓 To-Do List!</h1>
+    <p>Selamat datang! <span>Mahasiswa Unindra!</span></p>
+  </header>
+
+  <!-- Statistik -->
+  <section class="stats">
+    <div class="card total">Total Tugas <span id="total">0</span></div>
+    <div class="card selesai">Selesai <span id="done">0</span></div>
+    <div class="card menunggu">Menunggu <span id="pending">0</span></div>
+    <div class="card deadline">Deadline Dekat <span id="deadline">0</span></div>
+  </section>
+
+  <!-- Kontrol -->
+  <section class="controls">
+    <button id="addTaskBtn" class="btn primary">+ Tambah Tugas</button>
+    <button id="clearAllBtn" class="btn danger">🗑 Hapus Semua</button>
+    <select id="filterCategory">
+      <option value="all">Semua Kategori</option>
+      <option value="Kuliah">Kuliah</option>
+      <option value="Praktikum">Praktikum</option>
+      <option value="UKM">UKM</option>
+    </select>
+    <select id="filterPriority">
+      <option value="all">Semua Prioritas</option>
+      <option value="Tinggi">Tinggi</option>
+      <option value="Sedang">Sedang</option>
+      <option value="Rendah">Rendah</option>
+    </select>
+  </section>
+
+  <!-- Daftar Tugas -->
+  <section class="task-list">
+    <h2>📋 Daftar Tugas</h2>
+    <ul id="taskContainer">
+      <li class="empty">Belum ada tugas. Mulai tambahkan tugas pertama Anda!</li>
+    </ul>
+  </section>
+
+  <!-- Modal Tambah/Edit -->
+  <div id="taskModal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="modalTitle">Tambah Tugas Baru</h3>
+      <form id="taskForm">
+        <label>Judul Tugas</label>
+        <input type="text" id="taskTitle" required>
+
+        <label>Deskripsi</label>
+        <textarea id="taskDesc"></textarea>
+
+        <label>Kategori</label>
+        <select id="taskCategory">
+          <option value="Kuliah">Kuliah</option>
+          <option value="Praktikum">Praktikum</option>
+          <option value="UKM">UKM</option>
+        </select>
+
+        <label>Prioritas</label>
+        <select id="taskPriority">
+          <option value="Tinggi">Tinggi</option>
+          <option value="Sedang">Sedang</option>
+          <option value="Rendah">Rendah</option>
+        </select>
+
+        <label>Deadline</label>
+        <input type="date" id="taskDeadline">
+
+        <div class="modal-actions">
+          <button type="submit" class="btn primary">Simpan</button>
+          <button type="button" id="cancelBtn" class="btn">Batal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: #f9fafc; color: #333; }
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #6a5acd, #00c6ff);
+  color: white;
+}
+.header h1 { font-size: 28px; margin-bottom: 5px; }
+.header span { font-weight: bold; }
+
+/* Statistik Cards */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin: 20px;
+}
+.card {
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.card span { display: block; font-size: 24px; margin-top: 5px; }
+.total { border-left: 6px solid #007bff; }
+.selesai { border-left: 6px solid #28a745; }
+.menunggu { border-left: 6px solid #ffc107; }
+.deadline { border-left: 6px solid #dc3545; }
+
+/* Kontrol */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+}
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.primary { background: #007bff; color: #fff; }
+.danger { background: #e63946; color: #fff; }
+select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Task List */
+.task-list { margin: 20px; }
+.task-list h2 { margin-bottom: 10px; }
+#taskContainer { list-style: none; }
+#taskContainer li {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#taskContainer li.empty {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  box-shadow: none;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.4);
+}
+.hidden { display: none; }
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+}
+.modal-content label { display: block; margin-top: 10px; font-weight: 500; }
+.modal-content input, .modal-content textarea, .modal-content select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
